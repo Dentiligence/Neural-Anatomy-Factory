@@ -2,16 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "version": 2,
   "name": "dentiligence-api",
-  "builds": [
-    {
-      "src": "api/main.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "runtime": "python3.11"
-      }
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
@@ -26,7 +16,8 @@
   "functions": {
     "api/main.py": {
       "maxDuration": 60,
-      "memory": 3009
+      "memory": 3009,
+      "runtime": "@vercel/python"
     }
   },
   "headers": [
